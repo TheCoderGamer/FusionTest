@@ -12,7 +12,7 @@ namespace Network
         private static NetworkManager Instance { get; set; }
         private NetworkRunner SessionRunner { get; set; }
     
-        [SerializeField] private GameObject runnerPrefab;
+        [SerializeField] private GameObject networkRunnerPrefab;
 
         private NetworkMangerEvents _networkMangerEvents;
 
@@ -43,7 +43,7 @@ namespace Network
         private void CreateRunner()
         {
             // Instanciar el runner y asignarle los callbacks
-            SessionRunner = Instantiate(runnerPrefab, this.transform).GetComponent<NetworkRunner>();
+            SessionRunner = Instantiate(networkRunnerPrefab, this.transform).GetComponent<NetworkRunner>();
             SessionRunner.AddCallbacks(_networkMangerEvents);
         
         
